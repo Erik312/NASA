@@ -1,0 +1,37 @@
+h1 {
+
+	color: red;
+}
+
+
+#main-title{
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 31px;
+}
+
+
+#image-title{
+	text-align: center;
+	padding-left:50px;
+}
+
+#date-time{
+	text-align: center;
+	padding-left: 210px;
+}
+
+#main-image{
+	text-align: center;
+	border:3px solid red ;
+	border-radius: 30px;
+	border-width: auto;
+}
+
+#description-word{
+	color: blue;
+}
+
+#description{
+	text-align: center;
+}

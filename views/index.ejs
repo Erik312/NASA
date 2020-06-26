@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NASA Photo A Day</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="assets/index.css" rel="stylesheet" type="text/css">
+
+</head>
+
+
+
+<body>
+<div class="container-fluid" id="main-title">
+<h1>NASA Photo A Day</h1>
+</div>
+
+
+
+<% data %>
+    
+        
+            <div class="contaier-fluid">
+            <div class="row">
+            <div class="col-sm-6" id="image-title">
+ 				<h2>Title: <%= data.title %></h2>
+            </div>
+
+            <div class="col-sm-6" id="date-time">
+
+                <h3>Date: <%= data.date %></h3>
+            </div>
+
+
+            </div>
+               
+    			
+            </div>
+
+            
+
+        
+
+         
+           
+      
+        
+    
+    <div class="container-fluid">
+
+    <% getImage %>
+    <div class="container-fluid text-center" > 
+
+	<img src= <%= getImage.url %>  id="main-image"  >
+
+
+    </div>
+
+
+    </div>
+
+    <div class="container-fluid" id="description">
+
+    <h2 id="description-word">Description:</h2> <h3><%= data.explanation %></h3>
+
+    </div>
+     
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>
+
+
+
