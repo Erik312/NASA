@@ -20,18 +20,18 @@ app.set("view engine", "ejs");
 
 app.get('/', async function(req, res){
 	console.log("starting")
-	
+
 	var response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
 	var data = await response.json();
 	var getImage = await fetch(data.url);
-	console.log("finsihed")
+	console.log("finished")
 	console.log(data.title)
 	console.log(data)
-	
+
 
 
 	res.render("index.ejs", {data:data, getImage:getImage});
-		
+
 
 
 
