@@ -1,6 +1,14 @@
+body{
+	background-color: black;
+}
+
 h1 {
 
 	color: red;
+}
+
+.header-logo{
+	padding: 10px 10px;
 }
 
 
@@ -33,5 +41,10 @@ h1 {
 }
 
 #description{
+	text-align: center;
+}
+
+footer{
+	padding-top: 20px;
 	text-align: center;
 }

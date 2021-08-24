@@ -18,15 +18,31 @@
 
 
 <body>
+  <header class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6">
+        <img class="header-logo" src="images/icons8-spaceship-58.png" alt="spaceship">
+      </div>
+
+      <div class="col-sm-6">
+        <nav>
+
+        </nav>
+      </div>
+    </div>
+
+
+  </header>
 <div class="container-fluid" id="main-title">
-<h1>NASA Photo A Day</h1>
+<h1>Explore NASA</h1>
+
 </div>
 
 
 
 <% data %>
-    
-        
+
+
             <div class="contaier-fluid">
             <div class="row">
             <div class="col-sm-6" id="image-title">
@@ -40,23 +56,23 @@
 
 
             </div>
-               
-    			
+
+
             </div>
 
-            
 
-        
 
-         
-           
-      
-        
-    
+
+
+
+
+
+
+
     <div class="container-fluid">
 
     <% getImage %>
-    <div class="container-fluid text-center" > 
+    <div class="container-fluid text-center" >
 
 	<img src= <%= getImage.url %>  id="main-image"  >
 
@@ -71,7 +87,7 @@
     <h2 id="description-word">Description:</h2> <h3><%= data.explanation %></h3>
 
     </div>
-     
+
 
 
 
@@ -79,7 +95,9 @@
 
 
 
-
+<footer class="container-fluid">
+  <p>Erik Ramos production</p>
+</footer>
 
 
 
@@ -93,6 +111,3 @@
 
 
 </html>
-
-
-
