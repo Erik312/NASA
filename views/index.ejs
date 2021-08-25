@@ -18,18 +18,24 @@
 
 
 <body>
-  <header class="container-fluid">
-    <div class="row">
-      <div class="col-sm-6">
-        <img class="header-logo" src="images/icons8-spaceship-58.png" alt="spaceship">
-      </div>
+  <header class="container-fluid" id="top-nav">
 
-      <div class="col-sm-6">
-        <nav>
+        <a><img class="header-logo" src="images/icons8-spaceship-58.png" alt="spaceship"></a>
+
+
+        <nav class="my-links" id="my-link1">
+          <a href="#">link1</a>
+          <a href="#">link2</a>
+          <a href="#">link3</a>
+
 
         </nav>
-      </div>
-    </div>
+
+        <a href="javascript:void(0);" class="icon" onclick="navFunction()">
+        <ion-icon id="menu-icon" name="menu-outline"></ion-icon>
+        </a>
+
+
 
 
   </header>
@@ -43,7 +49,7 @@
 <% data %>
 
 
-            <div class="contaier-fluid">
+            <div class="container-fluid">
             <div class="row">
             <div class="col-sm-6" id="image-title">
  				<h2>Title: <%= data.title %></h2>
@@ -101,6 +107,29 @@
 
 
 
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+<script type="text/javascript">
+
+  function navFunction(){
+    console.log("hello")
+    var n = document.getElementById("my-link1");
+    console.log(n)
+    if(n.style.display === "block"){
+      console.log("2")
+      n.style.display = "none";
+      console.log("3")
+    } else {
+      console.log("5")
+      n.style.display = "block";
+      console.log("6")
+    }
+  }
+
+</script>
 
 </body>
 
