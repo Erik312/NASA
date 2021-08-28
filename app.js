@@ -19,7 +19,22 @@ app.set("view engine", "ejs");
 
 
 app.get('/', async function(req, res){
-	console.log("starting")
+	console.log("home")
+
+
+
+
+	res.render("index.ejs");
+
+
+
+
+});
+
+
+
+app.get('/pad', async function(req, res){
+	console.log("fetching data")
 
 	var response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
 	var data = await response.json();
@@ -30,11 +45,7 @@ app.get('/', async function(req, res){
 
 
 
-	res.render("index.ejs", {data:data, getImage:getImage});
-
-
-
-
+	res.render("pad.ejs", {data:data, getImage:getImage})
 });
 
 

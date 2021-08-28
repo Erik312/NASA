@@ -80,18 +80,38 @@ h1 {
 
 }
 
-#home-mission {
-	padding-top: 20px;
-	color: white;
-	font-size: 15px;
-	text-align: center;
+#mt-1{
+
+
 }
 
+
+#image-title{
+	text-align: center;
+	padding-left:50px;
+}
+
+#date-time{
+	text-align: center;
+	padding-left: 210px;
+}
+
+#main-image{
+	text-align: center;
+	border:3px solid red ;
+	border-radius: 30px;
+	border-width: auto;
+}
+
+#description-word{
+	color: blue;
+}
+
+#description{
+	text-align: center;
+}
 
 footer{
 	padding-top: 20px;
 	text-align: center;
-	position: absolute;
-	bottom:0;
-	width: 100%;
 }
