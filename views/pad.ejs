@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -8,10 +7,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Explore NASA</title>
+<title>NASA Photo A Day</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link href="assets/index.css" rel="stylesheet" type="text/css">
+<link href="assets/pad.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -46,20 +45,58 @@
 
 <hr>
 
+<% data %>
 
-<div class="container-fluid" id="home-mission">
-  <p>Welcome to Explore NASA! An interface for the offciial NASA API. Get lost in a trove of information provided dirrectly from NASA.
-    Look at the NASA photo of the day, explore data sets, check the weather on mars and much much more. The mission is to make NASA data
-    accesible by all. The sky is not the limit!
-  </p>
+
+            <div class="container-fluid">
+            <div class="row">
+            <div class="col-sm-6" id="image-title">
+ 				<h2>Title: <%= data.title %></h2>
+            </div>
+
+            <div class="col-sm-6" id="date-time">
+
+                <h3>Date: <%= data.date %></h3>
+            </div>
+
+
+            </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="container-fluid">
+
+    <% getImage %>
+    <div class="container-fluid text-center" >
+
+	<img src= <%= getImage.url %>  id="main-image"  >
+
+
+    </div>
+
+
+    </div>
+
+    <div class="container-fluid" id="description">
+
+    <h2 id="description-word">Description:</h2> <h3><%= data.explanation %></h3>
+
+    </div>
+
+
+
 
 </div>
-
-
-
-
-
-
 
 
 
