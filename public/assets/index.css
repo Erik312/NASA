@@ -144,3 +144,14 @@ footer{
 	bottom:0;
 	width: 100%;
 }
+
+#f-icon {
+	font-size: 30px;
+	color: red;
+	cursor: pointer;
+	transition: 2s;
+}
+
+#f-icon:hover{
+	transform: scale(1.2);
+}
