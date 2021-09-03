@@ -15,7 +15,7 @@ h1 {
 
 
 .header-logo:hover{
-	transform: translateY(-20px);
+	transform: translateY(-70px);
 }
 
 
@@ -56,9 +56,10 @@ h1 {
 	top: 0;
 }
 
-#top-nav a:hover{
+#my-link1 a:hover{
 	background-color: #ddd;
 	color: black;
+
 
 }
 
@@ -80,38 +81,60 @@ h1 {
 
 }
 
-#mt-1{
 
-
-}
 
 
 #image-title{
 	text-align: center;
 	padding-left:50px;
+	color: white;
+
 }
 
 #date-time{
 	text-align: center;
 	padding-left: 210px;
+	color: white;
 }
 
 #main-image{
 	text-align: center;
-	border:3px solid red ;
+	border:3px solid black ;
 	border-radius: 30px;
 	border-width: auto;
+	height: 550px;
+	width: 550px;
+
+
 }
 
 #description-word{
-	color: blue;
+	color: white;
 }
 
 #description{
 	text-align: center;
 }
 
+#data-content{
+	color: white;
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+
 footer{
 	padding-top: 20px;
 	text-align: center;
+}
+
+#f-icon {
+	font-size: 30px;
+	color: red;
+	cursor: pointer;
+	transition: 2s;
+}
+
+#f-icon:hover{
+	transform: scale(1.2);
 }

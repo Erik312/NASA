@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NASA Photo A Day</title>
+<title>Explore NASA</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link href="assets/pad.css" rel="stylesheet" type="text/css">
@@ -24,7 +24,7 @@
 
         <nav class="my-links" id="my-link1">
           <a href="/">Home</a>
-          <a href="/pad">Photo a day</a>
+          <a href="/pad">Astronomy Picture of the day (APOD)</a>
           <a href="#">link3</a>
 
 
@@ -89,7 +89,7 @@
 
     <div class="container-fluid" id="description">
 
-    <h2 id="description-word">Description:</h2> <h3><%= data.explanation %></h3>
+    <h2 id="description-word">Description:</h2> <h3 id="data-content"><%= data.explanation %></h3>
 
     </div>
 
@@ -101,6 +101,9 @@
 
 
 <footer class="container-fluid">
+  <a href="#top-nav">
+  <ion-icon id="f-icon" name="caret-up-outline"></ion-icon>
+  </a>
   <p>Erik Ramos production</p>
 </footer>
 
