@@ -81,29 +81,33 @@ h1 {
 
 }
 
-
+#section-title {
+	color: white;
+	text-align: center;
+}
 
 
 #image-title{
 	text-align: center;
-	padding-left:50px;
+	padding-left:;
 	color: white;
 
 }
 
 #date-time{
 	text-align: center;
-	padding-left: 210px;
+	padding-left:;
 	color: white;
 }
 
 #main-image{
 	text-align: center;
-	border:3px solid black ;
+	border:2px solid red ;
 	border-radius: 30px;
 	border-width: auto;
 	height: 550px;
-	width: 550px;
+	width: auto;
+	
 
 
 }
@@ -137,4 +141,15 @@ footer{
 
 #f-icon:hover{
 	transform: scale(1.2);
+}
+
+
+
+@media only screen and (max-width: 480px){
+
+	#main-image{
+		height: 350px;
+		width: auto;
+	}
+
 }
