@@ -49,9 +49,10 @@
 
 
             <div class="container-fluid">
+              <h2 id="section-title">APOD</h2>
             <div class="row">
             <div class="col-sm-6" id="image-title">
- 				<h2>Title: <%= data.title %></h2>
+ 				         <h3>Title: <%= data.title %></h3>
             </div>
 
             <div class="col-sm-6" id="date-time">
@@ -74,18 +75,18 @@
 
 
 
-    <div class="container-fluid">
+
 
     <% getImage %>
-    <div class="container-fluid text-center" >
+    <div class="container-fluid" >
 
-	<img src= <%= getImage.url %>  id="main-image"  >
-
-
-    </div>
+	     <img id="main-image" class="img-responsive center-block"  src= <%= getImage.url %> >
 
 
     </div>
+
+
+
 
     <div class="container-fluid" id="description">
 
@@ -96,7 +97,7 @@
 
 
 
-</div>
+
 
 
 
