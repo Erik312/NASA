@@ -37,15 +37,15 @@ app.get('/pad', async function(req, res){
 	console.log("fetching data")
 
 	var response = await fetch('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY');
-	var data = await response.json();
-	var getImage = await fetch(data.url);
-	console.log("finished")
-	console.log(data.title)
-	console.log(data)
-
-
-
-	res.render("pad.ejs", {data:data, getImage:getImage})
+	if(response.ok){
+		var data = await response.json();
+		var getImage = await fetch(data.url);
+		console.log("finished...sucess")
+		res.render("pad.ejs", {data:data, getImage:getImage})
+	} else {
+		console.log("ERROR: 404/api data error")
+		res.send("ERROR: api data retrieval error.")
+	}
 });
 
 
