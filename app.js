@@ -51,6 +51,24 @@ app.get('/pad', async function(req, res){
 
 
 
+app.get('/tech/patents', async function(req,res){
+
+	console.log("starting api request")
+	let w_response = await fetch("https://api.nasa.gov/techtransfer/patent/?engine&api_key=DEMO_KEY");
+	if(w_response.ok){
+		let d1 = await w_response.json()
+		console.log(d1.results[0])
+		console.log("done")
+		res.send("ok")
+	} else{
+
+		console.log("ERROR: 400/404/api request failed")
+		res.send("bad request to api 400/404")
+	}
+
+});
+
+
 
 app.listen(process.env.PORT || 3000, function(){
 	console.log("listening on port 3000");
