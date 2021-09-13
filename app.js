@@ -50,11 +50,18 @@ app.get('/pad', async function(req, res){
 
 
 
+app.get('/tech', async function(req,res){
+	console.log("tech")
+	res.render('tech.ejs')
+});
+
+
+
 
 app.get('/tech/patents', async function(req,res){
 
 	console.log("starting api request")
-	let w_response = await fetch("https://api.nasa.gov/techtransfer/patent/?engine&api_key=DEMO_KEY");
+	let w_response = await fetch("https://api.nasa.gov/techtransfer/patent/rocket?engine&api_key=DEMO_KEY");
 	if(w_response.ok){
 		let d1 = await w_response.json()
 		console.log(d1.results[0])
