@@ -10,7 +10,7 @@
 <title>Explore NASA</title>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link href="assets/tech.css" rel="stylesheet" type="text/css">
+<link href="assets/patents.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -20,7 +20,7 @@
   <header class="container-fluid" id="top-nav">
 
         <img class="header-logo" src="images/icons8-spaceship-58.png" alt="spaceship">
-
+        <p id="logo-t">Explore NASA</p>
 
         <nav class="my-links" id="my-link1">
           <a href="/">Home</a>
@@ -39,31 +39,18 @@
 
   </header>
 <div class="container-fluid" id="main-title">
-<h1 id="mt-1">Explore NASA</h1>
-
+<h1 id="mt-1">Patents</h1>
+<form action="/patents" method="POST">
+  <input type="text" name="patent_kw" value="" placeholder="search...">
+  <button class="btn btn-default" type="submit" name="button">search</button>
+</form>
 </div>
 
 <hr>
 
 
+<div class="container-fluid" id="main-content">
 
-
-<div class="container-fluid" id="t-section">
-  <h2 id="t-title">Tech Transfer</h2>
-  <p class="t-desc">NASA's Technology Transfer Program ensures that innovations developed for exploration and discovery are broadly available to the public. The NASA patent portfolio is available to benefit US citizens. Through partnerships and licensing agreements with industry, these patents ensure that NASA’s investments in pioneering research find secondary uses that benefit the economy, create jobs, and improve quality of life. </p>
-  <a href="/patents"><button id="t-b1" class="btn btn-default" type="button" name="button">Patents</button></a>
-  <a href="/software"><button id="t-b2" class="btn btn-default" type="button" name="button">Software</button></a>
-</div>
-
-
-<div class="container-fluid">
-  <div class="">
-
-  </div>
-
-  <div class="">
-
-  </div>
 </div>
 
 
