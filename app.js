@@ -77,17 +77,18 @@ app.get('/patents/:searchTerms', async function(req,res){
 	console.log("starting api request")
   let e1 = req.params.searchTerms
   console.log(e1)
-	let w_response = await fetch("https://api.nasa.gov/techtransfer/patent/rocket?engine&api_key=DEMO_KEY");
+	let w_response = await fetch(`https://api.nasa.gov/techtransfer/patent/?${e1}&api_key=`);
 	if(w_response.ok){
 		let d1 = await w_response.json()
 		console.log(d1.results[0])
 		console.log("done")
-    res.json({message:"otay"})
+    res.send(d1)
 
 	} else{
 
-	   console.log("ERROR: 400/404/api request failed")
-	   res.json({message:"bad request to api 400/404"})
+	   console.log("ERROR: api request failed")
+	   res.status(500)
+     res.json({message:"something broke"})
 	}
 })
 
