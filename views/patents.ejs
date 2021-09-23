@@ -112,15 +112,24 @@
     if (p2.ok){
       let p3 = await p2.json();
       console.log(p3);
-      e1.style.display = "none";
+      console.log(p3.results.length)
+      if (p3.results.length <= 0){
+        e1.innerHTML = "No results found..."
+      } else{
+        e1.style.display = "none";
 
 
-      let d1 = await document.getElementById("card-meat");
-      d1.innerHTML = `${p3.message}`;
+        let d1 = await document.getElementById("card-meat");
+        d1.innerHTML = `${p3.results}`;
+
+      }
+
 
 
     }else{
       e1.innerHTML = "Error: Bad request to api ";
+      let p4 = await p2.json()
+      console.log(p4.message)
 
     }
 
