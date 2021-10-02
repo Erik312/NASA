@@ -77,10 +77,11 @@ app.get('/patents/:searchTerms', async function(req,res){
 	console.log("starting api request")
   let e1 = req.params.searchTerms
   console.log(e1)
-	let w_response = await fetch(`https://api.nasa.gov/techtransfer/patent/?${e1}&api_key=`);
+	let w_response = await fetch(`https://api.nasa.gov/techtransfer/patent/?${e1}&api_key=DEMO_KEY`);
 	if(w_response.ok){
+    console.log(w_response)
 		let d1 = await w_response.json()
-		console.log(d1.results[0])
+		console.log(d1)
 		console.log("done")
     res.send(d1)
 

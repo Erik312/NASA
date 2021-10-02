@@ -49,20 +49,21 @@
 <hr>
 
 
-<div class="container-fluid" id="main-content">
+<div class="container-fluid text-center" id="main-content">
   <h3 id="status-title"></h3>
 
-  <div class="card">
-      <div class="card-body" id="card-meat">
 
-      </div>
-  </div>
+
 
 </div>
 
+<div class="container-fluid" id="main-content-meat">
 
+</div>
 
-
+<div class="container-fluid text-center">
+  <a id="load-more-link" onclick="nextResults()">Load more</a>
+</div>
 
 
 <footer class="container-fluid">
@@ -81,6 +82,13 @@
 
 <script type="text/javascript">
 
+
+
+
+
+
+
+
   function navFunction(){
     console.log("hello")
     var n = document.getElementById("my-link1");
@@ -98,38 +106,88 @@
 
 
 
+var master_data = [];
+var start_index = 0;
+var lot_size = 10;
+
+
+
+function paginate(data, s_index, l_size){
+  let new_data = data.slice(s_index, s_index + l_size)
+  start_index += lot_size
+  return new_data
+
+}
+
+function createElement(d_list){
+  let f1 = document.getElementById("main-content-meat");
+  for(item of d_list){
+    f1.innerHTML += `<div class="card"><div class="card-body">${item}</div></div>`
+
+  }
+  return
+
+}
+
+
+function nextResults(){
+  let t1 = document.getElementById("load-more-link");
+  let next_chunks = paginate(master_data,start_index,lot_size)
+  if(next_chunks.length == 0){
+    t1.style.display = "none";
+  }else {
+    createElement(next_chunks)
+  }
+
+  return
+}
+
+
+
 
 
  async function patentSearch(){
+   let p1 = document.getElementById("ps-1").value;
+   let d1 = document.getElementById("main-content-meat");
+   let e1 = document.getElementById("status-title");
+   let f1 = document.getElementById("load-more-link");
+    f1.style.display = "none";
+    d1.innerText = '';
+    console.log(p1);
+    e1.innerText = "Loading.....";
+    e1.style.display = "block";
+    master_data.length = 0;
+    start_index = 0;
 
-    let p1 = await document.getElementById("ps-1").value;
-    console.log(p1)
-    let e1 = await document.getElementById("status-title");
-    e1.innerHTML = "Loading.....";
 
     let p2 = await fetch(`/patents/${p1}`);
-    p1.value = '';
+
     if (p2.ok){
+
       let p3 = await p2.json();
       console.log(p3);
       console.log(p3.results.length)
       if (p3.results.length <= 0){
-        e1.innerHTML = "No results found..."
+        e1.innerText = "No results found...";
+
       } else{
+        for(item of p3.results){
+          master_data.push(item)
+        }
         e1.style.display = "none";
-
-
-        let d1 = await document.getElementById("card-meat");
-        d1.innerHTML = `${p3.results}`;
-
+        let first_chunk = paginate(master_data,start_index,lot_size)
+        createElement(first_chunk)
+        f1.style.display = "block"
+        return
       }
 
 
 
     }else{
-      e1.innerHTML = "Error: Bad request to api ";
+      e1.innerText = "Error: Bad request to api ";
       let p4 = await p2.json()
       console.log(p4.message)
+      return
 
     }
 
