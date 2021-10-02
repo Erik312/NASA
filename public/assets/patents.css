@@ -91,8 +91,27 @@ h1 {
 }
 
 
+#status-title{
+	color: white;
+}
 
 
+
+
+.card{
+	border: 3px solid red;
+	border-radius: 2px;
+	padding: 10px 10px;
+	margin:15px 15px;
+	color: white;
+}
+
+
+
+#load-more-link{
+	display: none;
+	cursor: pointer;
+}
 
 footer{
 	padding-top: 50px;
