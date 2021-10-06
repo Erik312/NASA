@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Explore NASA</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="assets/patents.css" rel="stylesheet" type="text/css">
+
+</head>
+
+
+
+<body>
+  <header class="container-fluid" id="top-nav">
+
+        <img class="header-logo" src="images/icons8-spaceship-58.png" alt="spaceship">
+        <p id="logo-t">Explore NASA</p>
+
+        <nav class="my-links" id="my-link1">
+          <a href="/">Home</a>
+          <a href="/pad">Astronomy Picture of the day (APOD)</a>
+          <a href="/tech">TechTransfer</a>
+
+
+        </nav>
+
+        <a href="javascript:void(0);" class="icon" onclick="navFunction()">
+        <ion-icon id="menu-icon" name="menu-outline"></ion-icon>
+        </a>
+
+
+
+
+  </header>
+<div class="container-fluid" id="main-title">
+<h1 id="mt-1">Software</h1>
+
+  <input id="sw-1" type="text" name="software_kw" placeholder="search software by keyword:" onfocus="this.value=''">
+  <button class="btn btn-default" type="submit" name="button" onclick="softwareSearch()">search</button>
+
+</div>
+
+<hr>
+
+
+<div class="container-fluid text-center" id="main-content">
+  <h3 id="status-title"></h3>
+
+
+
+
+</div>
+
+<div class="container-fluid" id="main-content-meat">
+
+</div>
+
+<div class="container-fluid text-center">
+  <a id="load-more-link" onclick="nextResults()">Load more</a>
+</div>
+
+
+<footer class="container-fluid">
+  <a href="#top-nav">
+  <ion-icon id="f-icon" name="caret-up-outline"></ion-icon>
+  </a>
+  <p>Erik Ramos production</p>
+</footer>
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+
+
+
+  function navFunction(){
+    console.log("hello")
+    var n = document.getElementById("my-link1");
+    console.log(n)
+    if(n.style.display === "block"){
+      console.log("2")
+      n.style.display = "none";
+      console.log("3")
+    } else {
+      console.log("5")
+      n.style.display = "block";
+      console.log("6")
+    }
+  }
+
+
+
+var master_data = [];
+var start_index = 0;
+var lot_size = 10;
+
+
+
+function paginate(data, s_index, l_size){
+  let new_data = data.slice(s_index, s_index + l_size)
+  start_index += lot_size
+  return new_data
+
+}
+
+function createElement(d_list){
+  let f1 = document.getElementById("main-content-meat");
+  for(item of d_list){
+    f1.innerHTML += `<div class="card mx-auto"><div class="card-header text-center">${item[2]}</div><div class="card-body">${item[3]}</div><div class="card-footer"><p>${item[6]}</p><a href=${item[8]} target="_blank">${item[8]}</a></div></div>`
+
+  }
+  return
+
+}
+
+
+function nextResults(){
+  let t1 = document.getElementById("load-more-link");
+  let next_chunks = paginate(master_data,start_index,lot_size)
+  if(next_chunks.length == 0){
+    t1.style.display = "none";
+  }else {
+    createElement(next_chunks)
+  }
+
+  return
+}
+
+
+
+
+
+ async function softwareSearch(){
+   let p1 = document.getElementById("sw-1").value;
+   let d1 = document.getElementById("main-content-meat");
+   let e1 = document.getElementById("status-title");
+   let f1 = document.getElementById("load-more-link");
+    f1.style.display = "none";
+    d1.innerText = '';
+    console.log(p1);
+    e1.innerText = "Loading.....";
+    e1.style.display = "block";
+    master_data.length = 0;
+    start_index = 0;
+
+
+    let p2 = await fetch(`/software/${p1}`);
+
+    if (p2.ok){
+
+      let p3 = await p2.json();
+      console.log(p3);
+      console.log(p3.results.length)
+      if (p3.results.length <= 0){
+        e1.innerText = "No results found...";
+
+      } else{
+        for(item of p3.results){
+          master_data.push(item)
+        }
+        e1.style.display = "none";
+        let first_chunk = paginate(master_data,start_index,lot_size)
+        createElement(first_chunk)
+        f1.style.display = "block"
+        return
+      }
+
+
+
+    }else{
+      e1.innerText = "Error: Bad request to api ";
+      let p4 = await p2.json()
+      console.log(p4.message)
+      return
+
+    }
+
+
+
+
+
+  }
+
+</script>
+
+</body>
+
+
+
+
+
+
+
+</html>
