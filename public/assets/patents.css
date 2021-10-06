@@ -119,14 +119,17 @@ h1 {
 
 .card-image{
 	padding: 10px 10px;
-	height: 350px;
-	width: auto;
+	max-height: 350px;
+	max-width: auto;
 }
 
 #load-more-link{
 	display: none;
 	cursor: pointer;
+	color: red;
 }
+
+
 
 footer{
 	padding-top: 50px;
