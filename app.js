@@ -97,6 +97,40 @@ app.get('/patents/:searchTerms', async function(req,res){
 
 
 
+
+app.get('/software', async function(req,res){
+  res.render("software.ejs")
+
+})
+
+
+
+
+app.get('/software/:searchTerms', async function(req,res){
+	console.log("starting api request")
+  let e1 = req.params.searchTerms
+  console.log(e1)
+	let w_response = await fetch(`https://api.nasa.gov/techtransfer/software/?${e1}&api_key=DEMO_KEY`);
+	if(w_response.ok){
+    console.log(w_response)
+		let d1 = await w_response.json()
+		console.log(d1)
+		console.log("done")
+    res.send(d1)
+
+	} else{
+
+	   console.log("ERROR: api request failed")
+	   res.status(500)
+     res.json({message:"something broke"})
+	}
+})
+
+
+
+
+
+
 app.listen(process.env.PORT || 3000, function(){
 	console.log("listening on port 3000");
 })
