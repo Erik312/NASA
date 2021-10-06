@@ -122,7 +122,7 @@ function paginate(data, s_index, l_size){
 function createElement(d_list){
   let f1 = document.getElementById("main-content-meat");
   for(item of d_list){
-    f1.innerHTML += `<div class="card"><div class="card-header text-center">${item[2]}</div><div class="card-body">${item[3]}</div><div class="card-footer"><img src=${item[10]} class="card-image img-responsive center-block"></div></div>`
+    f1.innerHTML += `<div class="card mx-auto"><div class="card-header text-center">${item[2]}</div><div class="card-body">${item[3]}</div><div class="card-footer"><img src=${item[10]} onError="this.onerror=null;this.src='/images/error-loading.jpg';" class="card-image img-responsive center-block"></div></div>`
 
   }
   return
