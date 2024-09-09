@@ -73,7 +73,7 @@ h1 {
 
 
 #menu-icon {
-	font-size: 30px;
+	font-size: 40px;
 	color: red;
 }
 
@@ -85,10 +85,14 @@ h1 {
 
 }
 
+#mt-1{
+	font-size: 40px;
+}
+
 #home-mission {
 	padding-top: 20px;
 	color: white;
-	font-size: 15px;
+	font-size: 17px;
 	text-align: center;
 }
 
