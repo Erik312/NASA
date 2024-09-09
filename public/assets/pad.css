@@ -69,7 +69,7 @@ h1 {
 }
 
 #menu-icon {
-	font-size: 30px;
+	font-size: 40px;
 	color: red;
 }
 
@@ -79,6 +79,10 @@ h1 {
 	margin-bottom: 31px;
 	padding-top: 1%;
 
+}
+
+#mt-1{
+	font-size: 40px;
 }
 
 #section-title {
