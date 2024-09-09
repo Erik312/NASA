@@ -90,6 +90,7 @@ h1 {
 
 #t-title{
 	color: white;
+	font-size: 28px;
 }
 
 #t-section {
@@ -104,7 +105,7 @@ h1 {
 	color: white;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	font-size: 16px;
+	font-size: 17px;
 }
 
 #t-b1,#t-b2{
