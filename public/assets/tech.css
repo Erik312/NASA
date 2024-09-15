@@ -113,8 +113,12 @@ h1 {
 	margin: 7px 7px;
 	border: 2px solid red;
 	border-radius: 20px;
+	transition: all 0.2s ease-in-out;
 }
 
+#t-b1,#t-b2:hover{
+	transform: scale(1.1);
+}
 
 
 footer{
