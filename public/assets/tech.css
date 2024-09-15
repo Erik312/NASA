@@ -116,7 +116,11 @@ h1 {
 	transition: all 0.2s ease-in-out;
 }
 
-#t-b1,#t-b2:hover{
+#t-b1:hover{
+	transform: scale(1.1);
+}
+
+#t-b2:hover{
 	transform: scale(1.1);
 }
 
